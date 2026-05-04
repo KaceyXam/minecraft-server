@@ -6,7 +6,7 @@
   let
     modpack = pkgs.fetchModrinthModpack {
       src = ./modpacks/Modded-Kniffen-Fam.mrpack;
-      packHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      packHash = "sha256-P3Bd/i2JLegHbVjdpPBSMiG27uHdZ/5FSg58zVFIA8g=";
     };
   in {
     enable = true;
