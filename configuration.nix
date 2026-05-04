@@ -1,6 +1,6 @@
 { pkgs, lib, inputs, ... }: {
   imports = [
-    ./hardware.nix
+    ./hardware-configuration.nix
     ./minecraft.nix
   ];
   
