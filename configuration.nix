@@ -35,6 +35,11 @@
     description = "Kniffen Family";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  users.users.kxkniffen = {
+    isNormalUser = true;
+    description = "Admin Account";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
 
   environment.systemPackages = with pkgs; [
     tmux
