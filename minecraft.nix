@@ -22,6 +22,7 @@
           server-port = 25565;
           allow-flight = true;
           difficulty = "normal";
+          motd = "Kniffen Fam Modded Minecraft Server";
         };
 
         symlinks = {
