@@ -2,7 +2,13 @@
   imports = [
     ./hardware-configuration.nix
     ./minecraft.nix
+    playit-nixos-module.nixosModules.default
   ];
+
+  services.playit = {
+    enable = true;
+    secretPath = ./secret.toml;
+  };
   
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
