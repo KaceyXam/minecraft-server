@@ -2,12 +2,10 @@
   imports = [
     ./hardware-configuration.nix
     ./minecraft.nix
-    playit-nixos-module.nixosModules.default
   ];
 
-  services.playit = {
+  services.openssh = {
     enable = true;
-    secretPath = ./secret.toml;
   };
   
   boot.loader.systemd-boot.enable = true;
