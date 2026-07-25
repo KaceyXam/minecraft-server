@@ -6,12 +6,13 @@
   let
     modpack = pkgs.fetchModrinthModpack {
       src = ./modpacks/Modded-Kniffen-Fam-V2.mrpack;
-      packHash = "sha256-a/ciptr1LjWWdjBTjrO455RqRuxaRb2PrLbYgTT3cDg=";
+      packHash = "sha256-ngg0VCSf1ERGLF6Y+ApNvK0s/yGAOOn9nfSmyh536z4=";
     };
   in {
     enable = true;
     eula = true;
     openFirewall = true;
+    managementSystem.systemd-socket.enable = true;
 
     servers = {
       modded = {
