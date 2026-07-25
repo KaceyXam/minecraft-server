@@ -13,6 +13,8 @@
 
   networking.hostName = "kniffen-server"; # Define your hostname.
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   networking.networkmanager.enable = true;
 
   services.tuned.enable = true;
@@ -47,6 +49,8 @@
 
   environment.systemPackages = with pkgs; [
     tmux
+    neovim
+    helix
   ];
 
   nixpkgs.config.allowUnfree = true;
