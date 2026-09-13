@@ -24,6 +24,7 @@
           allow-flight = true;
           difficulty = "normal";
           motd = "Kniffen Fam Modded Minecraft Server";
+          view-distance = 6;
         };
 
         symlinks = {
