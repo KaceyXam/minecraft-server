@@ -46,7 +46,7 @@
 
       modded_2 = {
         enable = true;
-        package = pkgs.neoforgeServerse.neoforge-1_21_1;
+        package = pkgs.neoforgeServers.neoforge-1_21_1;
 
         serverProperties = {
           server-port = 25565;
