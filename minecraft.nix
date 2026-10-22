@@ -10,8 +10,16 @@
     };
     modpack_v2 = pkgs.fetchModrinthModpack {
       src = ./modpacks/2_Modded_2_Kniffen.mrpack;
-      packHash = "sha256-ngg0VCSf1ERGLF6Y+ApNvK0s/yGAOOn9nfSmyh536z4=";
+      packHash = "sha256-kld/+8UjGEvPunGcrv/dMjk7+CLtC3Q1q3ZKIr6RRiY=";
     };
+
+    modpack_v2_mods = pkgs.runCommand "modpack-v2-mods" {} ''
+      cp -rL --no-preserve=mode ${modpack_v2}/mods $out
+
+      rm $out/create-1.21.1-*.jar
+
+      cp ${./modpacks/patches/create-1.21.1-6.0.10.jar} $out
+    '';
   in {
     enable = true;
     eula = true;
@@ -48,6 +56,8 @@
         enable = true;
         package = pkgs.neoforgeServers.neoforge-1_21_1;
 
+        jvmOpts = "-Xms4G -Xmx24G";
+
         serverProperties = {
           server-port = 25565;
           allow-flight = true;
@@ -57,7 +67,7 @@
         };
 
         symlinks = {
-          "mods" = "${modpack_v2}/mods";
+          "mods" = modpack_v2_mods;
         };
 
         operators = {
